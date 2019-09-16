@@ -1,0 +1,33 @@
+#CORONENE NVT
+units		real
+atom_style	charge
+
+#DATA
+read_data	coronene.data
+replicate 	4 2 2
+
+#INTERATOMIC POTENTIAL
+pair_style  	reax/c NULL
+pair_coeff 	* * ./ffield.reax.CHO2016 C H 
+fix         	1 all qeq/reax 1 0.0 10.0 1.0e-6 reax/c
+
+#OUTPUT LOG
+thermo_style    custom  step temp pe ke etotal press
+thermo          1000
+thermo_modify  	flush yes
+
+#OUTPUT STRUCTURE
+dump		1 all cfg 10000 coronene.*.cfg mass type xs ys zs
+dump_modify 	1 element C H
+dump 		2 all custom 10000  coronene.*.pos id type x y z vx vy vz
+restart		200000 coronene.*.restart
+
+#MOLECULAR DYNAMICS
+timestep	0.1
+velocity	all create 2000 8983764
+fix 		2 all nve
+run 		1000
+
+unfix		2
+fix             3 all nvt temp 3500.0 3500.0 10.0
+run		10000000

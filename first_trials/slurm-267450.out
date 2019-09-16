@@ -1,0 +1,123 @@
+LAMMPS (5 Jun 2019)
+Reading data file ...
+  orthogonal box = (-12 -12 -12) to (12 12 12)
+  2 by 4 by 4 MPI processor grid
+  reading atoms ...
+  36 atoms
+  read_data CPU = 0.00347081 secs
+Replicating atoms ...
+  orthogonal box = (-12 -12 -12) to (84 36 36)
+  4 by 2 by 4 MPI processor grid
+  576 atoms
+  replicate CPU = 0.288333 secs
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 16 8 8
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair reax/c, perpetual
+      attributes: half, newton off, ghost
+      pair build: half/bin/newtoff/ghost
+      stencil: half/ghost/bin/3d/newtoff
+      bin: standard
+  (2) fix qeq/reax, perpetual, copy from (1)
+      attributes: half, newton off, ghost
+      pair build: copy
+      stencil: none
+      bin: none
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 0.1
+Per MPI rank memory allocation (min/avg/max) = 11.48 | 12.4 | 13.33 Mbytes
+Step Temp PotEng KinEng TotEng Press 
+       0         2000   -75085.961    3427.9316    -71658.03    1549.3913 
+    1000     1044.077   -73457.053    1789.5123   -71667.541    89.829105 
+Loop time of 4.75329 on 32 procs for 1000 steps with 576 atoms
+
+Performance: 1.818 ns/day, 13.204 hours/ns, 210.381 timesteps/s
+100.0% CPU use with 32 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.84464    | 1.1042     | 1.3587     |  13.0 | 23.23
+Neigh   | 0.00056668 | 0.00060162 | 0.00063667 |   0.0 |  0.01
+Comm    | 0.16455    | 0.39266    | 0.63709    |  19.9 |  8.26
+Output  | 0.00014104 | 0.00015821 | 0.00019258 |   0.0 |  0.00
+Modify  | 3.192      | 3.1966     | 3.2008     |   0.2 | 67.25
+Other   |            | 0.05911    |            |       |  1.24
+
+Nlocal:    18 ave 36 max 0 min
+Histogram: 2 0 3 7 4 4 7 3 0 2
+Nghost:    198 ave 228 max 169 min
+Histogram: 1 1 0 6 8 10 3 2 0 1
+Neighs:    444.75 ave 630 max 0 min
+Histogram: 1 1 0 0 3 6 3 4 8 6
+
+Total # of neighbors = 14232
+Ave neighs/atom = 24.7083
+Neighbor list builds = 5
+Dangerous builds = 0
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 1000
+  Time step     : 0.1
+Per MPI rank memory allocation (min/avg/max) = 11.48 | 12.46 | 13.33 Mbytes
+Step Temp PotEng KinEng TotEng Press 
+    1000     1044.077   -73457.053    1789.5123   -71667.541    89.829161 
+    2000     3186.405   -70282.194    5461.3891   -64820.805    223.92236 
+    3000    3476.2135   -70305.779     5958.111   -64347.668   -364.44329 
+    4000    3410.7679   -70614.991    5845.9394   -64769.052   -121.18619 
+    5000    3430.8356   -70284.311    5880.3348   -64403.976    318.06215 
+    6000    3650.3442   -70223.157    6256.5651   -63966.592   -106.87764 
+    7000    3590.3413    -70342.98    6153.7221   -64189.258    571.84333 
+    8000    3403.0412   -70259.027    5832.6961   -64426.331    257.85945 
+    9000    3639.8617   -70338.332    6238.5984   -64099.734    513.52418 
+   10000     3539.066   -70566.456     6065.838   -64500.618    221.43659 
+   11000    3384.6308   -70363.549    5801.1414   -64562.408    413.89085 
+   12000    3399.3903   -70711.539    5826.4386   -64885.101    399.96268 
+   13000    3590.3495   -70339.685    6153.7362   -64185.948   -93.986259 
+   14000    3405.8967   -70182.315    5837.5905   -64344.725    33.686867 
+   15000    3475.4825   -70303.643    5956.8581   -64346.785    62.367079 
+   16000     3250.463   -70265.613    5571.1823   -64694.431   -244.02652 
+   17000    3586.9463   -70250.291    6147.9032   -64102.387   -177.60224 
+   18000    3495.8357   -70303.985    5991.7428   -64312.242    269.91454 
+   19000    3602.3188   -70149.767    6174.2512   -63975.516    663.23755 
+   20000    3540.3987   -70293.257    6068.1221   -64225.135    178.16345 
+   21000    3431.4604   -70151.751    5881.4057   -64270.346   -399.83427 
+   22000    3707.8827   -70176.863     6355.184   -63821.679   -230.33506 
+   23000    3501.2093   -69865.742    6000.9529    -63864.79    715.64555 
+   24000    3479.8419   -69986.239      5964.33   -64021.909    78.710823 
+   25000    3477.2076   -70215.448    5959.8149   -64255.633   -394.58982 
+   26000    3657.8095   -70120.375    6269.3603   -63851.015    220.53519 
+   27000    3536.8036   -69918.787    6061.9603   -63856.827   -253.24564 
+   28000    3378.3477   -70237.305    5790.3723   -64446.933   -87.967603 
+   29000    3329.7101   -70119.822    5707.0092   -64412.813    461.53159 
+[node20-87:22720] *** Process received signal ***
+[node20-87:22720] Signal: Segmentation fault (11)
+[node20-87:22720] Signal code: Address not mapped (1)
+[node20-87:22720] Failing at address: 0x94b8ea10
+[node20-87:22720] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f0489d845d0]
+[node20-87:22720] [ 1] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x4dd57f]
+[node20-87:22720] [ 2] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x4ddb36]
+[node20-87:22720] [ 3] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x4de387]
+[node20-87:22720] [ 4] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x68eb09]
+[node20-87:22720] [ 5] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x5fa9bd]
+[node20-87:22720] [ 6] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x4d1b31]
+[node20-87:22720] [ 7] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x46e2b6]
+[node20-87:22720] [ 8] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x46c949]
+[node20-87:22720] [ 9] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x46d2e7]
+[node20-87:22720] [10] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x40d606]
+[node20-87:22720] [11] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f04899ca495]
+[node20-87:22720] [12] /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc[0x40f91f]
+[node20-87:22720] *** End of error message ***
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 21 with PID 22720 on node node20-87 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------

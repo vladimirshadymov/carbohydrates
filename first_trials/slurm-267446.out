@@ -1,0 +1,97 @@
+LAMMPS (5 Jun 2019)
+Reading data file ...
+  orthogonal box = (-12 -12 -12) to (12 12 12)
+  2 by 2 by 4 MPI processor grid
+  reading atoms ...
+  36 atoms
+  read_data CPU = 0.00328506 secs
+Replicating atoms ...
+  orthogonal box = (-12 -12 -12) to (84 36 36)
+  4 by 2 by 2 MPI processor grid
+  576 atoms
+  replicate CPU = 0.000870621 secs
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 16 8 8
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair reax/c, perpetual
+      attributes: half, newton off, ghost
+      pair build: half/bin/newtoff/ghost
+      stencil: half/ghost/bin/3d/newtoff
+      bin: standard
+  (2) fix qeq/reax, perpetual, copy from (1)
+      attributes: half, newton off, ghost
+      pair build: copy
+      stencil: none
+      bin: none
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 0.1
+Per MPI rank memory allocation (min/avg/max) = 15.68 | 15.68 | 15.68 Mbytes
+Step Temp PotEng KinEng TotEng Press 
+       0         2000   -75085.961    3427.9316    -71658.03    1549.3913 
+    1000     1044.077   -73457.053    1789.5123   -71667.541    89.829131 
+Loop time of 5.01743 on 16 procs for 1000 steps with 576 atoms
+
+Performance: 1.722 ns/day, 13.937 hours/ns, 199.305 timesteps/s
+100.0% CPU use with 16 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.645      | 1.6614     | 1.6874     |   1.0 | 33.11
+Neigh   | 0.00075183 | 0.00076724 | 0.00080978 |   0.0 |  0.02
+Comm    | 0.14676    | 0.18225    | 0.2107     |   4.2 |  3.63
+Output  | 0.00011305 | 0.00013521 | 0.00018371 |   0.0 |  0.00
+Modify  | 3.1291     | 3.1298     | 3.1306     |   0.0 | 62.38
+Other   |            | 0.0431     |            |       |  0.86
+
+Nlocal:    36 ave 36 max 36 min
+Histogram: 16 0 0 0 0 0 0 0 0 0
+Nghost:    252 ave 255 max 249 min
+Histogram: 4 0 0 4 0 0 4 0 0 4
+Neighs:    630 ave 630 max 630 min
+Histogram: 16 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 10080
+Ave neighs/atom = 17.5
+Neighbor list builds = 5
+Dangerous builds = 0
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 1000
+  Time step     : 0.1
+Per MPI rank memory allocation (min/avg/max) = 15.68 | 15.68 | 15.68 Mbytes
+Step Temp PotEng KinEng TotEng Press 
+    1000     1044.077   -73457.053    1789.5123   -71667.541    89.829171 
+    2000     3186.405   -70282.194    5461.3891   -64820.805    223.92299 
+    3000    3476.2423   -70305.836    5958.1603   -64347.675   -364.43297 
+    4000    3409.9125    -70614.71    5844.4733   -64770.236   -117.40105 
+    5000    3431.0125   -70278.002    5880.6381   -64397.364    116.05196 
+    6000    3628.3435   -70284.441    6218.8566   -64065.585   -153.20724 
+    7000      3518.49   -70610.576    6030.5715   -64580.004    1301.8306 
+    8000    3553.9424   -70449.655    6091.3357    -64358.32   -219.74557 
+    9000    3609.8735   -70063.689    6187.1996   -63876.489    593.68072 
+   10000    3508.0955   -70177.062    6012.7556   -64164.307   -343.73506 
+   11000    3460.3091   -70360.939    5930.8513   -64430.088    514.68126 
+   12000    3458.9322   -70431.108    5928.4914   -64502.617   -486.20501 
+   13000    3504.2491   -70386.986     6006.163   -64380.823    582.26504 
+   14000    3309.0769   -70471.792    5671.6445   -64800.148    -427.2002 
+   15000    3627.1786   -70599.851      6216.86   -64382.991    92.097559 
+   16000    3543.9716   -70371.413    6074.2461   -64297.167    543.63125 
+   17000    3412.4632   -70459.696    5848.8452   -64610.851    460.15418 
+   18000    3361.8216   -70609.382    5762.0472   -64847.335    154.06838 
+   19000    3870.0838   -70218.194    6633.1912   -63585.003    759.00777 
+   20000    3598.8834   -70377.955    6168.3629   -64209.592    357.34292 
+   21000    3501.3866   -70388.093    6001.2568   -64386.836    21.426988 
+   22000    3569.7097   -70671.929    6118.3602   -64553.568    198.14192 
+   23000    3577.8176       -70234     6132.257   -64101.743    472.65568 
+   24000    3390.9253   -70241.958      5811.93   -64430.028    129.14114 
+   25000    3637.5115   -70354.872    6234.5702   -64120.302    104.68429 
+   26000    3552.6067   -69894.878    6089.0464   -63805.832    999.91675 
+mpirun: Forwarding signal 18 to job
+slurmstepd: error: *** JOB 267446 ON node20-13 CANCELLED AT 2019-09-11T14:56:49 ***

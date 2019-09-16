@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#SBATCH -N 1 --ntasks-per-node=16 --job-name lammps
+#SBATCH -t 20000:0
+
+mpirun /home/common/orekhov.nd/_STUDENTS/bin/lmp_reaxc  -in in.reax -log coronene_3000K.log
