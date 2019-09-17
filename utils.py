@@ -1,7 +1,5 @@
-from ase.io import read
 import ase
 import numpy as np
-import nglview as nv
 import networkx as nx
 
 
@@ -26,7 +24,7 @@ def get_atom_idxs(atoms, atom_type):
     return np.nonzero(atoms.get_atomic_numbers() == atom_type)
 
 
-def calc_carb_hybr(atoms):
+def calc_carbon_hybr(atoms):
     bond_graph = get_bond_graph(atoms)
     carbon_idxs = get_atom_idxs(atoms, atom_type=6)
     print(type(carbon_idxs))
@@ -50,3 +48,16 @@ def calc_carb_hybr(atoms):
     others = np.array(others)
 
     return (sp1, sp2, sp3, others)
+
+def get_clusters_num(atoms, min_cluster_size=18):
+    bond_graph = get_bond_graph(atoms)
+    cluster_sizes = np.array([len(comp) for comp in nx.connected_components(bond_graph)])
+    return np.nonzero(cluster_sizes >= min_cluster_size)[0].shape[0]
+
+def get_carbon_cycles(atoms, cycle_length=6):
+    bond_graph = get_bond_graph(atoms)
+    cycle_list = []
+    for cycle in nx.algorithms.cycles.minimum_cycle_basis(bond_graph):
+        if len(cycle) == cycle_length:
+            cycle_list.append(cycle)
+    return cycle_list
