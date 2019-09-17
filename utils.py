@@ -1,8 +1,10 @@
 import ase
 import numpy as np
 import networkx as nx
+from numba import jit
 
 
+# @jit(nopython=True, parallel=True)
 def get_bond_graph(atoms, bond_length=1.85):
     coords = atoms.get_positions()
     coords = np.broadcast_to(coords, (coords.shape[0], coords.shape[0], coords.shape[1]))
@@ -20,19 +22,20 @@ def get_bond_graph(atoms, bond_length=1.85):
     return bond_graph
 
 
+# @jit(nopython=True, parallel=True)
 def get_atom_idxs(atoms, atom_type):
     return np.nonzero(atoms.get_atomic_numbers() == atom_type)
 
 
-def calc_carbon_hybr(atoms):
+# @jit(nopython=True, parallel=True)
+def get_carbon_hybr(atoms):
     bond_graph = get_bond_graph(atoms)
     carbon_idxs = get_atom_idxs(atoms, atom_type=6)
-    print(type(carbon_idxs))
     sp1 = []
     sp2 = []
     sp3 = []
     others = []
-    for carbon in carbon_idxs:
+    for carbon in carbon_idxs[0]:
         if len(list(bond_graph.neighbors(carbon))) == 2:
             sp1.append(carbon)
         elif len(list(bond_graph.neighbors(carbon))) == 3:
@@ -49,11 +52,15 @@ def calc_carbon_hybr(atoms):
 
     return (sp1, sp2, sp3, others)
 
+
+# @jit(nopython=True, parallel=True)
 def get_clusters_num(atoms, min_cluster_size=18):
     bond_graph = get_bond_graph(atoms)
     cluster_sizes = np.array([len(comp) for comp in nx.connected_components(bond_graph)])
     return np.nonzero(cluster_sizes >= min_cluster_size)[0].shape[0]
 
+
+# @jit(nopython=True, parallel=True)
 def get_carbon_cycles(atoms, cycle_length=6):
     bond_graph = get_bond_graph(atoms)
     cycle_list = []
